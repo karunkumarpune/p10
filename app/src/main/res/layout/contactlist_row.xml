@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/dp_10"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <app.com.perfec10.helper.RoundedImageView
+            android:id="@+id/riv_cont_row"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:scaleType="center"
+            app:riv_corner_radius="15dp"
+            app:riv_oval="false"/>
+        <TextView
+            android:id="@+id/tv_name_cont_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name frnd"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_20"/>
+        <ImageView
+            android:id="@+id/iv_select_cont_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/unselect"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+    <View
+        android:id="@+id/view_cont_row"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/view_color"
+        android:layout_marginTop="@dimen/dp_10"/>
+</LinearLayout>

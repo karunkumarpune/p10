@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <com.naver.android.helloyako.imagecrop.view.ImageCropView xmlns:imagecrop="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/iv_crop_zoom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            imagecrop:gridInnerColor="#66ffffff"
+            imagecrop:gridInnerStroke="1dp"
+            imagecrop:gridOuterColor="#ffffff"
+            imagecrop:gridOuterStroke="1dp"
+            imagecrop:setInnerGridMode="on"
+            imagecrop:setOuterGridMode="on" />
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/tv_retake_zoomcrop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Retake"
+            android:padding="@dimen/dp_10"
+            android:textColor="@color/black"
+            android:background="@color/colorPrimary"
+            android:textSize="@dimen/sp_18"
+            android:textAlignment="center"/>
+        <View
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="match_parent"
+            android:background="@color/black"/>
+        <TextView
+            android:id="@+id/tv_next_zoomcrop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Next"
+            android:padding="@dimen/dp_10"
+            android:textColor="@color/black"
+            android:background="@color/colorPrimary"
+            android:textSize="@dimen/sp_18"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+</RelativeLayout>

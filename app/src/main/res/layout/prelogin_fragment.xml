@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@mipmap/pre_login"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/ll_login_prelogin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+    </LinearLayout>
+   <!-- <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/pre_login"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/btn_login_prelogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:background="@color/colorPrimary"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_40"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="-50dp"/>
+    <TextView
+        android:id="@+id/tv_skip_prelogin"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:background="@color/diff_blue"
+        android:text="Skip Now "
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"/>-->
+</RelativeLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:background="@mipmap/logo"/>
+            <TextView
+                android:id="@+id/tv_sw1_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email ID"
+                android:layout_marginBottom="-5dp"
+                android:textColor="@color/black"/>
+            <EditText
+                android:id="@+id/et_email_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="example@email.com"
+                android:textSize="@dimen/sp_15"
+                android:inputType="textEmailAddress"/>
+            <TextView
+                android:id="@+id/tv_sw2_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:layout_marginBottom="-5dp"
+                android:textColor="@color/black"/>
+            <EditText
+                android:id="@+id/et_password_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="*****"
+                android:textSize="@dimen/sp_15"
+                android:inputType="textPassword"/>
+            <TextView
+                android:id="@+id/tv_sw3_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password"
+                android:layout_marginBottom="-5dp"
+                android:textColor="@color/black"/>
+            <EditText
+                android:id="@+id/et_confpass_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_50"
+                android:hint="*****"
+                android:backgroundTint="@color/edittext_baseline"
+                android:textSize="@dimen/sp_15"
+                android:inputType="textPassword"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_alignParentBottom="true">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/dp_2"
+                        android:layout_marginBottom="@dimen/dp_30">
+                        <TextView
+                            android:id="@+id/tv_sigup_signup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sign Up"
+                            android:textColor="@color/black"
+                            android:background="@color/colorPrimary"
+                            android:padding="@dimen/dp_15"
+                            android:textAlignment="center"/>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/dp_2"
+                        android:layout_marginBottom="@dimen/dp_30">
+                        <TextView
+                            android:id="@+id/tv_fb_signup"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Login With Facebook"
+                            android:textColor="@color/white"
+                            android:background="@color/fb_blue"
+                            android:padding="@dimen/dp_15"
+                            android:textAlignment="center"/>
+                    </android.support.v7.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/ll_login_signup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:id="@+id/tv_already_signup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Already have an account?"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="@dimen/dp_15"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:id="@+id/tv_login_signup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=" Sign In"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="@dimen/dp_15"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

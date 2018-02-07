@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Perfec10</string>
+    <string name="facebook_app_id">317818565350635</string>
+    <string name="login_canceled_facebooklogin">Login Cancel</string>
+
+    <string name="login_failed_facebooklogin">Login Failed</string>
+    <string name="add_friends">Add Friends</string>
+    <string name="search">Search</string>
+</resources>

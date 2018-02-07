@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "628656873811",
+    "firebase_url": "https://perfec10-f997f.firebaseio.com",
+    "project_id": "perfec10-f997f",
+    "storage_bucket": "perfec10-f997f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628656873811:android:a539def9993b2dbc",
+        "android_client_info": {
+          "package_name": "app.com.perfec10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628656873811-c2k2c57mo8kkld5dhdrtedsd0r6h4bg8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.com.perfec10",
+            "certificate_hash": "e8b6f37b1ae352e3c79340503bcd764f8f7c14b6"
+          }
+        },
+        {
+          "client_id": "628656873811-555kn5m5bpgn6tsfpsij3utrejgem54s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtkQgOES4XVdlKhp7kgGHvctQ12NRPNu0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628656873811-555kn5m5bpgn6tsfpsij3utrejgem54s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

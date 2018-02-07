@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app.com.perfec10.util.SwipeRevealLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:dragEdge="right"
+    app:mode="same_level">
+
+    <FrameLayout
+        android:id="@+id/delete_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffcc0000">
+
+        <TextView
+            android:id="@+id/tv_delete_partrow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:drawableLeft="@mipmap/delete"
+            android:textColor="@android:color/white"
+            android:text="Delete"
+            android:padding="@dimen/dp_10"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <app.com.perfec10.helper.RoundedImageView
+                    android:id="@+id/riv_img_partrow"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:riv_corner_radius="10dp"
+                    app:riv_oval="false"
+                    app:riv_border_width="@dimen/dp_1"
+                    app:riv_border_color="@color/view_color"
+                    android:layout_marginLeft="@dimen/dp_10"/>
+
+                <TextView
+                    android:id="@+id/tv_partiname_partrow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/view_color"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_5"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</app.com.perfec10.util.SwipeRevealLayout>

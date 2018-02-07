@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    android:orientation="vertical">
+
+    <!--<android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
+
+        <LinearLayout
+            android:layout_above="@+id/progressbar_selfpost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/diff_blue"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_40">
+
+                <TextView
+                    android:id="@+id/tv_sw1_selfpost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="@dimen/dp_25"
+                    android:paddingRight="@dimen/dp_25"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_10"
+                    android:textSize="@dimen/sp_17"
+                    android:text="My Perfec10 Body"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_sw2_selfpost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="See what your preferred Perfect body would look \n like based on the scores you gave to your snaps"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12"/>
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_self_post"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_sw3_selfpost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp_20"
+                android:text="No Posts to Display "
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_18"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    <!--</android.support.v4.widget.NestedScrollView>-->
+
+    <ProgressBar
+        android:layout_alignParentBottom="true"
+        android:id="@+id/progressbar_selfpost"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone" />
+</RelativeLayout>
