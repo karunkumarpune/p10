@@ -1,7 +1,7 @@
 package app.com.perfec10.fragment.self_snaps.adapter;
 
 import android.annotation.SuppressLint;
-import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -33,6 +33,7 @@ import app.com.perfec10.R;
 import app.com.perfec10.activity.MainActivity;
 import app.com.perfec10.fragment.friendposts.Comments;
 import app.com.perfec10.fragment.friendposts.LikeScreen;
+import app.com.perfec10.fragment.home.MyPerfec10Body;
 import app.com.perfec10.fragment.home.SelfSnaps;
 import app.com.perfec10.fragment.measure.Share;
 import app.com.perfec10.fragment.self_snaps.SelfSnapDetail;
@@ -80,11 +81,20 @@ public class SelfSnapAdapter extends RecyclerView.Adapter<SelfSnapAdapter.Holder
     }
 
     @Override
-    public void onBindViewHolder(final Holder holder, final int position) {
+    public void onBindViewHolder(final Holder holder, final int position)
+    {
         Log.d(TAG, "inside bind view");
         if (position!=0) {
             holder.ll_header.setVisibility(View.GONE);
         }
+
+        holder.tv_sw1_selfpost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mainActivity.startActivity(new Intent(mainActivity,MyPerfec10Body.class));
+            }
+        });
+
         holder.tv_delete_selfrow.setVisibility(View.GONE);
         holder.tv_names_selfrow.setText(preferenceManager.getKey_userName());
 
@@ -664,7 +674,7 @@ public class SelfSnapAdapter extends RecyclerView.Adapter<SelfSnapAdapter.Holder
     }
 
     public class Holder extends RecyclerView.ViewHolder {
-        private TextView tv_sw1_selfrow, tv_sw2_selfrow, tv_sw3_selfrow, tv_sw4_selfrow, tv_sw5_selfrow,
+        private TextView tv_sw1_selfpost, tv_sw1_selfrow,tv_sw2_selfrow, tv_sw3_selfrow, tv_sw4_selfrow, tv_sw5_selfrow,
                 tv_sw6_selfrow, tv_sw7_selfrow, tv_sw8_selfrow, tv_sw9_selfrow, tv_sw10_selfrow,
                 tv_sw11_selfrow, tv_sw12_selfrow, tv_sw13_selfrow, tv_caption_selfrow, tv_name_selfrow,
                 tv_location_selfrow, tv_date_selfrow, tv_pt1_selfrow, tv_pt2_selfrow, tv_pt3_selfrow,
@@ -679,6 +689,7 @@ public class SelfSnapAdapter extends RecyclerView.Adapter<SelfSnapAdapter.Holder
         public Holder(View itemView) {
             super(itemView);
             tv_sw1_selfrow = (TextView) itemView.findViewById(R.id.tv_sw1_selfrow);
+            tv_sw1_selfpost = (TextView) itemView.findViewById(R.id.tv_sw1_selfpost);
             tv_sw2_selfrow = (TextView) itemView.findViewById(R.id.tv_sw2_selfrow);
             tv_sw3_selfrow = (TextView) itemView.findViewById(R.id.tv_sw3_selfrow);
             tv_sw4_selfrow = (TextView) itemView.findViewById(R.id.tv_sw4_selfrow);

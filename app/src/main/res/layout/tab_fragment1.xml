@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="2"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:padding="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_60"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_pt1_stats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.9"
+                android:text="4.6"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_35" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_1"
+                android:layout_weight="1.1"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_2">
+
+                <TextView
+                    android:id="@+id/tv_sw2_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:drawableRight="@mipmap/pink_dot"
+                    android:text="Bust"
+                    android:textColor="#aaaaaa"
+                    android:textSize="@dimen/sp_17" />
+
+                <View
+                    android:layout_width="@dimen/dp_55"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="#aaaaaa" />
+
+                <TextView
+                    android:id="@+id/tv_sw3_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:drawableRight="@mipmap/orange_dot"
+                    android:text="Waist"
+                    android:textColor="#aaaaaa"
+                    android:textSize="@dimen/sp_17" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_pt2_stats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.9"
+                android:text="7.3"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_35" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_1"
+                android:layout_weight="1.1"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_2">
+
+                <TextView
+                    android:id="@+id/tv_sw4_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_7"
+                    android:drawableRight="@mipmap/pink_dot"
+                    android:text="Waist"
+                    android:textColor="#aaaaaa"
+                    android:textSize="@dimen/sp_17" />
+
+                <View
+                    android:layout_width="@dimen/dp_55"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="#aaaaaa" />
+
+                <TextView
+                    android:id="@+id/tv_sw5_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:drawableRight="@mipmap/green_dot"
+                    android:text="Hips"
+                    android:textColor="#aaaaaa"
+                    android:textSize="@dimen/sp_17" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_pt3_stats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.9"
+                android:text="3.7"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_35" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_1"
+                android:layout_weight="1.1"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_2">
+
+                <TextView
+                    android:id="@+id/tv_sw6_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:drawableRight="@mipmap/orange_dot"
+                    android:text="Legs"
+                    android:textColor="#aaaaaa"
+                    android:textSize="@dimen/sp_17" />
+
+                <View
+                    android:layout_width="@dimen/dp_55"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="#aaaaaa" />
+
+                <TextView
+                    android:id="@+id/tv_sw7_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:drawableRight="@mipmap/green_dot"
+                    android:text="Body"
+                    android:textColor="#aaaaaa"
+                    android:textSize="@dimen/sp_17" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_pt4_stats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.9"
+                android:text="2.6"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_35" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_1"
+                android:layout_weight="1.1"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_2">
+
+                <TextView
+                    android:id="@+id/tv_sw8_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:drawableRight="@mipmap/blue_dot"
+                    android:text="Body"
+                    android:textColor="#aaaaaa"
+                    android:textSize="@dimen/sp_17" />
+
+                <View
+                    android:layout_width="@dimen/dp_55"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="#aaaaaa" />
+
+                <TextView
+                    android:id="@+id/tv_sw9_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:drawableRight="@mipmap/grey_dot"
+                    android:text="Waist"
+                    android:textColor="#aaaaaa"
+                    android:textSize="@dimen/sp_17" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_pt5_stats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.9"
+                android:text="5.9"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_35" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_1"
+                android:layout_weight="1.1"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_2">
+
+                <TextView
+                    android:id="@+id/tv_sw10_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@mipmap/purple_dot"
+                    android:text="Shoulder"
+                    android:textColor="#aaaaaa"
+                    android:textSize="@dimen/sp_15" />
+
+                <View
+                    android:layout_width="@dimen/dp_65"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="#aaaaaa" />
+
+                <TextView
+                    android:id="@+id/tv_sw11_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:drawableRight="@mipmap/orange_dot"
+                    android:text="Hips"
+                    android:textColor="#aaaaaa"
+                    android:textSize="@dimen/sp_17" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bodyview_stats"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_80"
+        android:layout_marginBottom="@dimen/dp_100"
+        android:layout_weight="1"
+        android:background="@mipmap/girl_front"
+        android:orientation="vertical"/>
+</LinearLayout>

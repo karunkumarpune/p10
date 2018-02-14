@@ -1,6 +1,7 @@
 package app.com.perfec10.fragment.home;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
@@ -26,11 +27,9 @@ import java.util.ArrayList;
 
 import app.com.perfec10.R;
 import app.com.perfec10.activity.MainActivity;
-import app.com.perfec10.fragment.friendposts.adapter.FriendPostAdapter;
 import app.com.perfec10.fragment.profile.Profile;
 import app.com.perfec10.fragment.self_snaps.adapter.SelfSnapAdapter;
 import app.com.perfec10.helper.EndlessRecyclerViewScrollListener;
-import app.com.perfec10.model.FriendsPostGS;
 import app.com.perfec10.model.SelfPostGS;
 import app.com.perfec10.network.Network;
 import app.com.perfec10.network.NetworkCallBack;
@@ -123,6 +122,13 @@ public class SelfSnaps extends Fragment implements NetworkCallBack {
 
         rv_self_post = (RecyclerView) view.findViewById(R.id.rv_self_post);
         rv_self_post.setNestedScrollingEnabled(false);
+
+        tv_sw1_selfpost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mainActivity,MyPerfec10Body.class));
+            }
+        });
 
 
         Profile.fragmentManager = mainActivity.getSupportFragmentManager();

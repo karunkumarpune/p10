@@ -7,18 +7,23 @@ package app.com.perfec10.network;
 public class NetworkConstants {
 
 
+ // http://18.217.249.143/perfec10/api/login
+
   //  public static String baseUrl = "http://34.239.111.108/perfec10/api/"; // for base url
-    public static String baseUrl = "http://34.239.111.108/developer/perfec10/api/"; // for local url
+   // public static String baseUrl = "http://34.239.111.108/developer/perfec10/api/"; // for local url
+    public static String baseUrl = "http://18.217.249.143/perfec10/api/"; // for local url
 
       // http://34.239.111.108/developer/perfec10/api/signup
-    public static String localUrl = "http://34.239.111.108/developer/perfec10/api/";
+  //  public static String localUrl = "http://34.239.111.108/developer/perfec10/api/";
+    public static String localUrl = "http://18.217.249.143/perfec10/api/";
     //http://52.70.174.112/perfec10/groupImage/imagename
    // public static String basegroupUrl = "http://52.70.174.112/perfec10/groupImage/";
 
     //http://52.70.174.112/perfec10/profileImage/imagename
    // public static String imageBaseUrl = "http://52.70.174.112/perfec10/";
   //  public static String imageBaseUrl = "http://34.239.111.108/perfec10/";
-    public static String imageBaseUrl = "http://34.239.111.108/developer/perfec10/";
+   // public static String imageBaseUrl = "http://34.239.111.108/developer/perfec10/";
+    public static String imageBaseUrl = "http://18.217.249.143/perfec10/";
 
     public static String signupUrl = baseUrl + "signup";
     public static String verifyEmailUrl = baseUrl + "verifyEmail";
