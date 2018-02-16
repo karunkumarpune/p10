@@ -25,6 +25,10 @@ public class NetworkConstants {
    // public static String imageBaseUrl = "http://34.239.111.108/developer/perfec10/";
     public static String imageBaseUrl = "http://18.217.249.143/perfec10/";
 
+
+
+    public static String acceptTermsAndConditions = baseUrl + "acceptTermsAndConditions";
+
     public static String signupUrl = baseUrl + "signup";
     public static String verifyEmailUrl = baseUrl + "verifyEmail";
     public static String resendUrl = baseUrl + "resend";

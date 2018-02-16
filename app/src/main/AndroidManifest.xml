@@ -28,13 +28,16 @@
 
         <!-- tools:node="replace" removed it to get fcm token -->
 
-       <!-- <activity android:name=".fragment.login.TermCoditionsActivity"></activity>
+       <!-- </activity>
       -->
-        <activity android:name=".fragment.home.MyPerfec10Body" />
+        <!--<activity android:name=".fragment.home.MyPerfec10Body" />-->
+
+     <!--   <activity android:name=".fragment.login.TermCoditionsActivity"/>
+      -->
+
         <activity
-            android:name=".activity.SplashScreen"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan">
+            android:name=".fragment.login.TermCoditionsActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

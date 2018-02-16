@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import app.com.perfec10.R;
 import app.com.perfec10.activity.MainActivity;
@@ -21,25 +22,25 @@ import app.com.perfec10.fragment.home.Home;
  */
 
 @SuppressLint("ValidFragment")
-public class AddFriendAllowDialoge extends DialogFragment{
-    private MainActivity mainActivity;
+public class AddFriendAllowDialoges extends DialogFragment {
+    private TermCoditionsActivity mainActivity;
     private String TAG = "AddFriendAllowDialoge";
     private TextView tv_later_popup, tv_yes_popup, tv_subtext_dialoge;
     private String from;
 
-    public AddFriendAllowDialoge(MainActivity mainActivity, String from){
+    public AddFriendAllowDialoges(TermCoditionsActivity mainActivity, String from){
         this.mainActivity = mainActivity;
         this.from = from;
     }
 
-    public AddFriendAllowDialoge(){
+    public AddFriendAllowDialoges(){
 
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(android.support.v4.app.DialogFragment.STYLE_NORMAL, R.style.MY_DIALOG);
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.MY_DIALOG);
     }
 
     @NonNull
@@ -49,7 +50,7 @@ public class AddFriendAllowDialoge extends DialogFragment{
         final Dialog dialog = new Dialog(getActivity());
         dialog.setCanceledOnTouchOutside(false);
         dialog.setCancelable(false);
-        setStyle(android.support.v4.app.DialogFragment.STYLE_NORMAL, R.style.MY_DIALOG);
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.MY_DIALOG);
         dialog.setContentView(R.layout.addfriend_permisiondialoge);
         Window window = dialog.getWindow();
         window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
@@ -75,6 +76,8 @@ public class AddFriendAllowDialoge extends DialogFragment{
             @Override
             public void onClick(View view) {
                 dismiss();
+                MainActivity mainActivity=new MainActivity();
+                Toast.makeText(getActivity(),"hii",Toast.LENGTH_SHORT).show();
                 mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Home(mainActivity), "home").commit();
             }
         });
@@ -82,7 +85,9 @@ public class AddFriendAllowDialoge extends DialogFragment{
             @Override
             public void onClick(View view) {
                 dismiss();
-                mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new AddAfterSignup(mainActivity), "AddAfterSignup").commit();
+                Toast.makeText(getActivity(),"hii  ffdh",Toast.LENGTH_SHORT).show();
+
+                //  new MainActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new AddAfterSignup(), "AddAfterSignup").commit();
             }
         });
 

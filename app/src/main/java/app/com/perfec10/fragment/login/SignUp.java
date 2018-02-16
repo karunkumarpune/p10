@@ -1,6 +1,7 @@
 package app.com.perfec10.fragment.login;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -202,6 +203,25 @@ public class SignUp extends Fragment implements NetworkCallBack{
                     @Override
                     public void onResponse(String response) {
                         Log.d(TAG+" signup_response", "" + response);
+
+                        try {
+                            JSONObject object=new JSONObject(response);
+                            JSONArray array=object.getJSONArray("result");
+                            for(int i=0;i<array.length();i++){
+                                JSONObject obj=array.getJSONObject(i);
+                                int isAcceptedTermsConditions=obj.getInt("isAcceptedTermsConditions");
+                                Log.d("TAGS"," isAcceptedTermsConditions :"+isAcceptedTermsConditions);
+
+                                if(isAcceptedTermsConditions==0){
+                                    startActivity(new Intent(mainActivity,TermCoditionsActivity.class));
+                                }
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
                         final JSONObject jsonObject = Model.getObject(response);
                         if (jsonObject != null) {
                             Log.d(TAG+" _response", "" + response);
@@ -213,6 +233,7 @@ public class SignUp extends Fragment implements NetworkCallBack{
                                         Log.e(TAG+" result ", result+" ");
                                         JSONObject json = Model.getObject(result, 0);
                                         Log.e(TAG+" json ", json+" ");
+
                                         preferenceManager.setUserAuthkey(Model.getString(json, "accessToken"));
                                         preferenceManager.setKeyUserId(Model.getString(json, "user_id"));
                                         preferenceManager.setKey_userEmailId(Model.getString(json, "email"));

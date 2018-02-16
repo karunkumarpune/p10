@@ -4,11 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -44,7 +41,6 @@ import com.google.gson.JsonObject;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +50,6 @@ import app.com.perfec10.R;
 import app.com.perfec10.activity.MainActivity;
 import app.com.perfec10.fragment.measure.Stats;
 import app.com.perfec10.fragment.measure.StatsInput;
-import app.com.perfec10.fragment.profile.EditProfile;
 import app.com.perfec10.fragment.profile.Profile;
 import app.com.perfec10.model.Models;
 import app.com.perfec10.network.Network;
@@ -71,6 +66,7 @@ import static app.com.perfec10.helper.HelperClass.returnEmptyString;
  * Created by fluper on 25/10/17.
  */
 
+@SuppressLint("ValidFragment")
 public class Home extends Fragment implements NetworkCallBack{
     private MainActivity mainActivity;
   //  private int[] tabIcon = {R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher};
@@ -83,15 +79,17 @@ public class Home extends Fragment implements NetworkCallBack{
     public static String editUserId = "";
     private String TAG = "Home";
     private PreferenceManager preferenceManager;
-
+    private static Home instance = null;
 
     @SuppressLint("ValidFragment")
     public Home(MainActivity mainActivity){
         this.mainActivity = mainActivity;
-        preferenceManager = new PreferenceManager(mainActivity);
     }
 
-    public Home(){
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        preferenceManager = new PreferenceManager(mainActivity);
 
     }
 
