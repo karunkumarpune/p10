@@ -1,12 +1,12 @@
 package app.com.perfec10.fragment.login;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -185,6 +185,28 @@ public class Login extends Fragment implements NetworkCallBack {
                     public void onResponse(String response) {
                         Log.d(TAG+" login_response", "" + response);
                         final JSONObject jsonObject = Model.getObject(response);
+
+                        try {
+                            JSONObject object=new JSONObject(response);
+                            JSONArray array=object.getJSONArray("result");
+                            for(int i=0;i<array.length();i++){
+                                JSONObject obj=array.getJSONObject(i);
+                                int isAcceptedTermsConditions=obj.getInt("isAcceptedTermsConditions");
+                                Log.d("TAGS"," isAcceptedTermsConditions :"+isAcceptedTermsConditions);
+
+                                if(isAcceptedTermsConditions==0){
+                                    MainActivity.clearBackStack();
+                                    startActivity(new Intent(mainActivity,TermCoditionsActivity.class)
+                                            .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
+                                    mainActivity.finish();                                }
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
                         if (jsonObject != null) {
                             Log.d(TAG+" _response", "" + response);
                             if (jsonObject.has("message")) {

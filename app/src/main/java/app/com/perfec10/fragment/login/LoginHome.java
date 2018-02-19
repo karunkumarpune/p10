@@ -110,6 +110,7 @@ public class LoginHome extends Fragment {
             @Override
             public void onClick(View view) {
                 MainActivity.changeFragment(new Login(mainActivity), "login");
+
             }
         });
 
@@ -117,6 +118,7 @@ public class LoginHome extends Fragment {
             @Override
             public void onClick(View view) {
                 MainActivity.changeFragment(new SignUp(mainActivity), "login");
+
             }
         });
         btn_fb_loginhome.setOnClickListener(new View.OnClickListener() {

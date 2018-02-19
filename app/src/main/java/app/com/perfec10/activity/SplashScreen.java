@@ -18,11 +18,12 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import app.com.perfec10.R;
+import app.com.perfec10.util.PreferenceManager;
 
 public class SplashScreen extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 100;
     private String TAG = "SplashScreen";
-
+    private PreferenceManager preferenceManagers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,16 @@ public class SplashScreen extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
+
+        preferenceManagers = new PreferenceManager(this);
+
+
+        String s=preferenceManagers.getKey_Sesstion();
+
+        if(s.equals("1")){
+            preferenceManagers.clearPreferences();
+        }
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

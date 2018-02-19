@@ -45,6 +45,8 @@ public class PreferenceManager {
     public static final String key_fb_accessTokens = "fb_accesstokens";
     public static final String key_fb_userId = "key_fb_userid";
 
+    public static final String key_Sesstion = "key_Session";
+
 
 
 
@@ -71,6 +73,18 @@ public class PreferenceManager {
         editor.putString(key_permissions, permissions);
         editor.commit();
     }
+
+    public void setKey_Sesstion(String sesstion) {
+        editor.putString(key_Sesstion, sesstion);
+        editor.commit();
+    }
+
+    public String getKey_Sesstion() {
+        return pref.getString(key_Sesstion, "");
+    }
+
+
+
 
     public String getKey_permissions() {
         return pref.getString(key_permissions, "");

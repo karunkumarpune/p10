@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.CheckBox
 import app.com.perfec10.R
-import app.com.perfec10.fragment.profile.Profile.mainActivity
 import app.com.perfec10.network.NetworkConstants.acceptTermsAndConditions
 import app.com.perfec10.util.PreferenceManager
 import com.androidnetworking.AndroidNetworking
@@ -18,21 +17,19 @@ import org.json.JSONObject
 
 
 class TermCoditionsActivity : AppCompatActivity() {
-   
-   
+   private lateinit var preferenceManager: PreferenceManager
    val url="http://18.217.249.143/perfec10/termCondition/term.pdf"
-   
+   lateinit var mainActivity:TermCoditionsActivity
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
       setContentView(R.layout.activity_term_coditions)
-      
+      mainActivity=this
+      preferenceManager = PreferenceManager(this)
       pdfView.isZooming
       pdfView.fromAsset("term.pdf")
        .load()
-   
-   
-      val addFriendAllowDialoge = AddFriendAllowDialoges(this@TermCoditionsActivity, "email")
-      addFriendAllowDialoge.show(this@TermCoditionsActivity.supportFragmentManager, "fsdf")
+      preferenceManager.key_Sesstion = "1"
+     
    
    
       Log.d("TAHS"," check_accept.isChecked "+check_accept.isClickable)
@@ -46,7 +43,8 @@ class TermCoditionsActivity : AppCompatActivity() {
             }
             
       }else{
-         btn_next.setBackgroundColor(ContextCompat.getColor(this,R.color.colorPrimary))
+            preferenceManager.key_Sesstion = "1"
+            btn_next.setBackgroundColor(ContextCompat.getColor(this,R.color.colorPrimary))
          btn_next.isEnabled=false
       }
       
@@ -65,14 +63,14 @@ class TermCoditionsActivity : AppCompatActivity() {
        .build()
        .getAsJSONObject(object: JSONObjectRequestListener {
           override fun onResponse(response: JSONObject?) {
-             
-             Log.d("TAGS",response!!.toString())
-             
-         //    val addFriendAllowDialoge = AddFriendAllowDialoge(mainActivity, "email")
-            // addFriendAllowDialoge.show(mainActivity.supportFragmentManager, "fsdf")
-   
-   
              dilog.dismiss()
+             Log.d("TAGS",response!!.toString())
+             val s= response.getString("message")
+             if(s == "Successful.") {
+                preferenceManager.key_Sesstion = "2"
+                val addFriendAllowDialoge = AddFriendAllowDialoges(mainActivity, "email")
+                addFriendAllowDialoge.show(mainActivity.supportFragmentManager, "fsdf")
+             }
           }
    
           override fun onError(anError: ANError?) {
@@ -80,9 +78,22 @@ class TermCoditionsActivity : AppCompatActivity() {
           }
        })
    }
- 
    
+   override fun onResume() {
+      super.onResume()
+      Log.d("TAGS"," onResume clearPreferences ")
    
+   }
    
+   override fun onStop() {
+      super.onStop()
+      Log.d("TAGS"," onStop clearPreferences ")
    
+   }
+   
+   override fun onDestroy() {
+      super.onDestroy()
+      Log.d("TAGS"," onDestroy clearPreferences ")
+     // preferenceManager.clearPreferences()
+   }
 }

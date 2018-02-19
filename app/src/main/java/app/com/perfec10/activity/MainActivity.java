@@ -65,7 +65,7 @@ import java.util.Arrays;
 import app.com.perfec10.R;
 import app.com.perfec10.app.Config;
 import app.com.perfec10.fragment.home.Home;
-import app.com.perfec10.fragment.login.AddFriendAllowDialoge;
+import app.com.perfec10.fragment.login.AddAfterSignup;
 import app.com.perfec10.fragment.login.PreLogin;
 import app.com.perfec10.fragment.measure.Stats;
 import app.com.perfec10.fragment.self_snaps.SelfSnapDetail;
@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private String TAG = "MainActivity";
     public String userRated = "";
     private ArrayList<FbFrndsGS> fbFriends;
+    private int key_termCondition=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,6 +139,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             }
         }
 
+
+
+
+
+
+
+
+
+
         facebookLogin();
 
         /*if (app.com.perfec10.fragment.profile.Settings.sw_fb_sett != null){
@@ -170,6 +180,23 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
            // fragmentManager.beginTransaction().replace(R.id.main_frame, new Home(mainActivity)).commit();
         }
 
+
+        key_termCondition=getIntent().getIntExtra("key_termCondition",0);
+            if(key_termCondition==1){
+                mainActivity.getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_frame, new AddAfterSignup(mainActivity), "AddAfterSignup")
+                        .addToBackStack(null)
+                        .commit();
+                clearBackStack();
+            }
+            if(key_termCondition==2){
+                mainActivity.getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_frame, new Home(mainActivity), "home")
+                        .addToBackStack(null)
+                        .commit();            }
+                clearBackStack();
     }
 
     public GoogleApiClient getGoogleApiClient(){
@@ -309,6 +336,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             }
         }*//*
     }*/
+
+
+
+
 
     private void facebookLogin() {
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -581,12 +612,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
                                         if (isLogin.equals("1")){// user has loggedin before
 
-                                            mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Home(mainActivity), "home").commit();
+                                          //  mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Home(mainActivity), "home").commit();
                                         }else {
                                             // AddAfterSignup is called only when loggedin from fb
 
-                                            AddFriendAllowDialoge addFriendAllowDialoge = new AddFriendAllowDialoge(mainActivity , "fb");
-                                            addFriendAllowDialoge.show(mainActivity.getSupportFragmentManager(), "fsdf");
+                                       //     AddFriendAllowDialoge addFriendAllowDialoge = new AddFriendAllowDialoge(mainActivity , "fb");
+                                        //    addFriendAllowDialoge.show(mainActivity.getSupportFragmentManager(), "fsdf");
 
                                         }
                                     }

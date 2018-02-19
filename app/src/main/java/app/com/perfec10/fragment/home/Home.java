@@ -93,6 +93,7 @@ public class Home extends Fragment implements NetworkCallBack{
 
     }
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -563,5 +564,7 @@ public class Home extends Fragment implements NetworkCallBack{
         ));
         requestQueue.add(stringRequest);
     }
+
+
 
 }

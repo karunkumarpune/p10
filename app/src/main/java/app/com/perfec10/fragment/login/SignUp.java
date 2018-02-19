@@ -213,7 +213,10 @@ public class SignUp extends Fragment implements NetworkCallBack{
                                 Log.d("TAGS"," isAcceptedTermsConditions :"+isAcceptedTermsConditions);
 
                                 if(isAcceptedTermsConditions==0){
-                                    startActivity(new Intent(mainActivity,TermCoditionsActivity.class));
+                                    MainActivity.clearBackStack();
+                                    startActivity(new Intent(mainActivity,TermCoditionsActivity.class)
+                                            .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
+                                    mainActivity.finish();
                                 }
                             }
 
@@ -251,13 +254,13 @@ public class SignUp extends Fragment implements NetworkCallBack{
                                         preferenceManager.setKey_fromfb("0");
                                         if (is_verified.equals("0")){
                                             Log.e(TAG+" inside ", "if");
-                                            MainActivity.clearBackStack();
-                                            mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new VerificationScreen(mainActivity), "verification").commit();
+                                           // MainActivity.clearBackStack();
+                                           // mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new VerificationScreen(mainActivity), "verification").commit();
                                         }else {
                                             Log.e(TAG+" inside ", "else");
                                             MainActivity.clearBackStack();
-                                            AddFriendAllowDialoge addFriendAllowDialoge = new AddFriendAllowDialoge(mainActivity , "email");
-                                            addFriendAllowDialoge.show(mainActivity.getSupportFragmentManager(), "fsdf");
+                                          //  AddFriendAllowDialoge addFriendAllowDialoge = new AddFriendAllowDialoge(mainActivity , "email");
+                                            //addFriendAllowDialoge.show(mainActivity.getSupportFragmentManager(), "fsdf");
 
                                          //   mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Home(mainActivity), "home").commit();
                                         }

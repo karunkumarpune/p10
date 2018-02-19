@@ -98,13 +98,7 @@
                     android:textSize="@dimen/sp_16"
                     android:background="@android:color/transparent"/>
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_1"
-                android:background="@color/view_color"
-                android:layout_marginLeft="@dimen/dp_20"
-                android:layout_marginRight="@dimen/dp_20"/>
-            <TextView
+                 <TextView
                 android:id="@+id/tv_colaba_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -118,7 +112,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_1"
-                android:layout_marginTop="@dimen/dp_20"
                 android:background="@color/view_color"/>
 
             <LinearLayout
@@ -496,7 +489,7 @@
                 android:layout_marginBottom="@dimen/dp_20"
                 android:gravity="center_horizontal"
                 android:layout_margin="@dimen/dp_20"
-                android:background="@drawable/rectangle_round_border">
+                android:background="@drawable/circle_round_border">
                 <ImageView
                     android:id="@+id/iv_instagram_share"
                     android:layout_width="0dp"
@@ -526,6 +519,8 @@
                     android:visibility="gone"
                     android:src="@mipmap/whatsapp"/>
                 <TextView
+                    android:textStyle="bold"
+                    android:textSize="15sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Share Externally"

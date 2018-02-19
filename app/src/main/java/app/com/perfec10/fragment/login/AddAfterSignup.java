@@ -123,23 +123,29 @@ public class AddAfterSignup extends Fragment implements NetworkCallBack{
                 if (et_seach_addfrnd.getText().toString().length() > 0){
                     ArrayList<FbFrndsGS> searchedlist = new ArrayList<>();
 
-                    if(fbFrndsList.size()>0) {
+                    try {
 
-                        for (int i = 0; i < fbFrndsList.size(); i++) {
-                            String s = et_seach_addfrnd.getText().toString();
-                            boolean a = Pattern.compile(Pattern.quote(s), Pattern.CASE_INSENSITIVE).matcher(fbFrndsList.get(i).getName()).find();
 
-                            if (a) {
-                                FbFrndsGS fbFrndsGS = new FbFrndsGS();
-                                fbFrndsGS.setId(fbFrndsList.get(i).getId());
-                                fbFrndsGS.setName(fbFrndsList.get(i).getName());
-                                fbFrndsGS.setStatus(fbFrndsList.get(i).getStatus());
-                                fbFrndsGS.setImage(fbFrndsList.get(i).getImage());
-                                searchedlist.add(fbFrndsGS);
+                        if (fbFrndsList.size() > 0) {
+
+                            for (int i = 0; i < fbFrndsList.size(); i++) {
+                                String s = et_seach_addfrnd.getText().toString();
+                                boolean a = Pattern.compile(Pattern.quote(s), Pattern.CASE_INSENSITIVE).matcher(fbFrndsList.get(i).getName()).find();
+
+                                if (a) {
+                                    FbFrndsGS fbFrndsGS = new FbFrndsGS();
+                                    fbFrndsGS.setId(fbFrndsList.get(i).getId());
+                                    fbFrndsGS.setName(fbFrndsList.get(i).getName());
+                                    fbFrndsGS.setStatus(fbFrndsList.get(i).getStatus());
+                                    fbFrndsGS.setImage(fbFrndsList.get(i).getImage());
+                                    searchedlist.add(fbFrndsGS);
+                                }
+
                             }
-
                         }
+
                     }
+                    catch (Exception e){}
                     if (fbClick){
                         AddFrndAdapter addFrndAdapter = new AddFrndAdapter(mainActivity, searchedlist);
                         rv_serachlist_addfrnd.setAdapter(addFrndAdapter);

@@ -2,20 +2,21 @@ package app.com.perfec10.fragment.login;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import app.com.perfec10.R;
 import app.com.perfec10.activity.MainActivity;
-import app.com.perfec10.fragment.home.Home;
 
 /**
  * Created by fluper on 23/1/18.
@@ -70,23 +71,33 @@ public class AddFriendAllowDialoges extends DialogFragment {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void clickListner(){
 
         tv_later_popup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();
-                MainActivity mainActivity=new MainActivity();
-                Toast.makeText(getActivity(),"hii",Toast.LENGTH_SHORT).show();
-                mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Home(mainActivity), "home").commit();
+                startActivity(new Intent(mainActivity,MainActivity.class)
+                        .putExtra("key_termCondition",2)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                        mainActivity.finish();
+
+
             }
         });
+
         tv_yes_popup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();
-                Toast.makeText(getActivity(),"hii  ffdh",Toast.LENGTH_SHORT).show();
 
+                startActivity(new Intent(mainActivity,MainActivity.class)
+                        .putExtra("key_termCondition",1)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                        mainActivity.finish();
                 //  new MainActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new AddAfterSignup(), "AddAfterSignup").commit();
             }
         });
