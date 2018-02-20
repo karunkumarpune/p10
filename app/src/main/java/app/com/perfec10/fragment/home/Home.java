@@ -167,13 +167,13 @@ public class Home extends Fragment implements NetworkCallBack{
         tab_home.addTab(thirdTab);
         tab_home.addTab(fourTab);
 
-       /* LinearLayout tabOne = (LinearLayout) LayoutInflater.from(mainActivity).inflate(R.layout.custom_hometab, null);
+       /* LinearLayout tabOne = (LinearLayout) LayoutInflater.from(mainActivitySignUP).inflate(R.layout.custom_hometab, null);
         tab_home.getTabAt(0).setCustomView(tabOne);
-        LinearLayout tabTwo = (LinearLayout) LayoutInflater.from(mainActivity).inflate(R.layout.custom_hometab, null);
+        LinearLayout tabTwo = (LinearLayout) LayoutInflater.from(mainActivitySignUP).inflate(R.layout.custom_hometab, null);
         tab_home.getTabAt(1).setCustomView(tabTwo);
-        LinearLayout tabThree = (LinearLayout) LayoutInflater.from(mainActivity).inflate(R.layout.custom_hometab, null);
+        LinearLayout tabThree = (LinearLayout) LayoutInflater.from(mainActivitySignUP).inflate(R.layout.custom_hometab, null);
         tab_home.getTabAt(2).setCustomView(tabThree);
-        LinearLayout tabFour = (LinearLayout) LayoutInflater.from(mainActivity).inflate(R.layout.custom_hometab, null);
+        LinearLayout tabFour = (LinearLayout) LayoutInflater.from(mainActivitySignUP).inflate(R.layout.custom_hometab, null);
         tab_home.getTabAt(3).setCustomView(tabFour);*/
     }
 
@@ -230,7 +230,9 @@ public class Home extends Fragment implements NetworkCallBack{
                        alertDialog.setNegativeButton("Proceed Anyway", new DialogInterface.OnClickListener() {
                            public void onClick(DialogInterface dialog, int which) {
                                dialog.cancel();
-                               vp_home.setCurrentItem(tab.getPosition());
+                               try {
+                                   vp_home.setCurrentItem(tab.getPosition());
+                               }catch (Exception e){}
                                MainActivity.save = false;
                            }
                        });
@@ -239,7 +241,9 @@ public class Home extends Fragment implements NetworkCallBack{
 
                }else {
 
-                   vp_home.setCurrentItem(tab.getPosition());
+                   try {
+                       vp_home.setCurrentItem(tab.getPosition());
+                   }catch (Exception e){}
                }
 
             }
@@ -268,7 +272,9 @@ public class Home extends Fragment implements NetworkCallBack{
                     alertDialog.setNegativeButton("Proceed Anyway", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.cancel();
-                            vp_home.setCurrentItem(tab.getPosition());
+                            try {
+                                vp_home.setCurrentItem(tab.getPosition());
+                            }catch (Exception e){}
                             MainActivity.save = false;
                         }
                     });
@@ -277,7 +283,9 @@ public class Home extends Fragment implements NetworkCallBack{
 
                 }else {
 
-                    vp_home.setCurrentItem(tab.getPosition());
+                    try {
+                        vp_home.setCurrentItem(tab.getPosition());
+                    }catch (Exception e){}
                 }
             }
         });
@@ -301,7 +309,7 @@ public class Home extends Fragment implements NetworkCallBack{
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new HomeCamera(mainActivity), "ONE");
-       // adapter.addFragment(new CameraNew(mainActivity), "ONE");
+       // adapter.addFragment(new CameraNew(mainActivitySignUP), "ONE");
         adapter.addFragment(new FriendsPost(), "TWO");
         adapter.addFragment(new SelfSnaps(), "THREE");
         adapter.addFragment(new SelfSnaps(), "THREE");
@@ -396,7 +404,7 @@ public class Home extends Fragment implements NetworkCallBack{
                 try {
 
                     message = returnEmptyString(jsonObject.get("message"));
-                    //  Toast.makeText(mainActivity, message, Toast.LENGTH_SHORT).show();
+                    //  Toast.makeText(mainActivitySignUP, message, Toast.LENGTH_SHORT).show();
                     Stats.age = ""; Stats.height = ""; Stats.wieght = ""; Stats.note = "";
                     Stats.score = "";
                     if (StatsInput.et_race_stats != null){
@@ -415,7 +423,7 @@ public class Home extends Fragment implements NetworkCallBack{
                     Stats.rb_stats.setRating(0);
 
                     /*for (int i =0; i<=2; i++){
-                        mainActivity.getSupportFragmentManager().popBackStack();
+                        mainActivitySignUP.getSupportFragmentManager().popBackStack();
                     }*/
                 } catch (Exception e) {
                     Log.d(TAG+" Outcome", e.toString());
@@ -427,7 +435,7 @@ public class Home extends Fragment implements NetworkCallBack{
                 break;
             case 400:
                 message = returnEmptyString(jsonObject.get("message"));
-                //Toast.makeText(mainActivity, message, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mainActivitySignUP, message, Toast.LENGTH_SHORT).show();
                 break;
             case 401:
                 message = returnEmptyString(jsonObject.get("message"));
@@ -461,7 +469,7 @@ public class Home extends Fragment implements NetworkCallBack{
             switch (position) {
                 case 0:
                     return new HomeCamera(mainActivity);
-                  //  return new CameraNew(mainActivity);
+                  //  return new CameraNew(mainActivitySignUP);
                 case 1:
                     return new FriendsPost(mainActivity);
                 case 2:
@@ -517,10 +525,10 @@ public class Home extends Fragment implements NetworkCallBack{
                 VolleyLog.d(TAG, "Error: " + error.getMessage());
                 if (error instanceof TimeoutError || error instanceof NoConnectionError) {
                     Log.d(TAG+" error ocurred", "TimeoutError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof AuthFailureError) {
                     Log.d(TAG+" error ocurred", "AuthFailureError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ServerError) {
                     Log.d(TAG+" error ocurred", "ServerError");
 
@@ -529,7 +537,7 @@ public class Home extends Fragment implements NetworkCallBack{
                     Toast.makeText(mainActivity, "Network Error", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ParseError) {
                     Log.d(TAG+" error ocurred", "ParseError");
-                    //    Toast.makeText(mainActivity, "Internet connection is ", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is ", Toast.LENGTH_LONG).show();
                 }
             }
         }) {

@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight=".8"
-                android:text="MyPerFec10 Body"
+                android:text="MyPerfec10 Body"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="@dimen/sp_17" />

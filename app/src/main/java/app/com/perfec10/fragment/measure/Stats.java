@@ -507,7 +507,7 @@ public class Stats extends Fragment implements NetworkCallBack, GoogleApiClient.
             @Override
             public void onClick(View view) {
                 /*for (int i =0; i<=2; i++){
-                    mainActivity.getSupportFragmentManager().popBackStack();
+                    mainActivitySignUP.getSupportFragmentManager().popBackStack();
                 }*/
                 if (picture.equals("1")){
                     double a = rb_stats.getRating();
@@ -658,10 +658,10 @@ public class Stats extends Fragment implements NetworkCallBack, GoogleApiClient.
                 VolleyLog.d(TAG, "Error: " + error.getMessage());
                 if (error instanceof TimeoutError || error instanceof NoConnectionError) {
                     Log.d(TAG+"error ocurred", "TimeoutError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof AuthFailureError) {
                     Log.d(TAG+" error ocurred", "AuthFailureError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ServerError) {
                     Log.d(TAG+" error ocurred", "ServerError");
 
@@ -670,7 +670,7 @@ public class Stats extends Fragment implements NetworkCallBack, GoogleApiClient.
                     Toast.makeText(mainActivity, "Network Error", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ParseError) {
                     Log.d(TAG+" error ocurred", "ParseError");
-                    //    Toast.makeText(mainActivity, "Internet connection is ", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is ", Toast.LENGTH_LONG).show();
                 }
             }
         }) {
@@ -717,7 +717,7 @@ public class Stats extends Fragment implements NetworkCallBack, GoogleApiClient.
                 try {
 
                     message = returnEmptyString(jsonObject.get("message"));
-                  //  Toast.makeText(mainActivity, message, Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(mainActivitySignUP, message, Toast.LENGTH_SHORT).show();
                     age = ""; height = ""; wieght = "";score="";note = "";
                     if (StatsInput.et_race_stats != null){
                         StatsInput.et_tag_stats.setText("");

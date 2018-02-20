@@ -34,9 +34,14 @@
             android:screenOrientation="portrait"
             />
 
-        <activity android:name=".fragment.login.TermCoditionsActivity"
+        <activity android:name=".fragment.login.signUp.TermCoditionsActivitySignUP"
             android:screenOrientation="portrait"
             />
+
+        <activity android:name=".fragment.login.signUp.login.TermCoditionsActivityLogin"
+            android:screenOrientation="portrait"
+            />
+
 
         <activity
             android:name=".activity.SplashScreen"
@@ -53,28 +58,35 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
-            <intent-filter>
+
+
+          <!--  <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data android:mimeType="image/*" />
             </intent-filter>
-            <intent-filter>
+            -->
+
+   <!--         <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data android:mimeType="text/plain" />
-            </intent-filter>
-            <intent-filter>
+            </intent-filter>-->
+
+<!--            <intent-filter>
                 <action android:name="android.intent.action.SEND_MULTIPLE" />
 
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data android:mimeType="image/*" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
+
+
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"

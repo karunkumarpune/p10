@@ -46,6 +46,7 @@ import app.com.perfec10.R;
 import app.com.perfec10.activity.MainActivity;
 import app.com.perfec10.app.Config;
 import app.com.perfec10.fragment.home.Home;
+import app.com.perfec10.fragment.login.signUp.login.TermCoditionsActivityLogin;
 import app.com.perfec10.helper.Validation;
 import app.com.perfec10.model.FriendListGS;
 import app.com.perfec10.network.Network;
@@ -171,7 +172,7 @@ public class Login extends Fragment implements NetworkCallBack {
             progress.show();
 
             login_result(jsonObject.toString());
-          //  Network.hitPostApi(mainActivity, jsonObject, this, NetworkConstants.loginUrl, NetworkConstants.requestCodeSignup);
+          //  Network.hitPostApi(mainActivitySignUP, jsonObject, this, NetworkConstants.loginUrl, NetworkConstants.requestCodeSignup);
         }else {
             Toast.makeText(mainActivity, "No Internt Connection ", Toast.LENGTH_SHORT).show();
         }
@@ -196,7 +197,7 @@ public class Login extends Fragment implements NetworkCallBack {
 
                                 if(isAcceptedTermsConditions==0){
                                     MainActivity.clearBackStack();
-                                    startActivity(new Intent(mainActivity,TermCoditionsActivity.class)
+                                    startActivity(new Intent(mainActivity, TermCoditionsActivityLogin.class)
                                             .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
                                     mainActivity.finish();                                }
                             }
@@ -273,7 +274,7 @@ public class Login extends Fragment implements NetworkCallBack {
                                         /*if (is_verified.equals("0")){
                                             Log.e("inside ", "if");
                                             MainActivity.clearBackStack();
-                                            mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new VerificationScreen(mainActivity), "verification").commit();
+                                            mainActivitySignUP.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new VerificationScreen(mainActivitySignUP), "verification").commit();
                                         }else {*/
                                             Log.e(TAG+" inside ", "else");
                                             MainActivity.clearBackStack();
@@ -299,10 +300,10 @@ public class Login extends Fragment implements NetworkCallBack {
                 VolleyLog.d("login", "Error: " + error.getMessage());
                 if (error instanceof TimeoutError || error instanceof NoConnectionError) {
                     Log.d(TAG+" error ocurred", "TimeoutError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof AuthFailureError) {
                     Log.d(TAG+" error ocurred", "AuthFailureError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ServerError) {
                     Log.d(TAG+" error ocurred", "ServerError");
                     et_password_login.setText("");
@@ -312,7 +313,7 @@ public class Login extends Fragment implements NetworkCallBack {
                     Toast.makeText(mainActivity, "Network Error", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ParseError) {
                     Log.d(TAG+" error ocurred", "ParseError");
-                    //    Toast.makeText(mainActivity, "Internet connection is ", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is ", Toast.LENGTH_LONG).show();
                 }
             }
         }) {
@@ -364,7 +365,7 @@ public class Login extends Fragment implements NetworkCallBack {
                         String is_verified = returnEmptyString(json.get("is_verified"));
                         /*if (is_verified.equals("0")){
                             MainActivity.clearBackStack();
-                            mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new VerificationScreen(mainActivity), "verification").commit();
+                            mainActivitySignUP.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new VerificationScreen(mainActivitySignUP), "verification").commit();
                         }else {*/
                             MainActivity.clearBackStack();
                             mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Home(mainActivity), "home").commit();

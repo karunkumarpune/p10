@@ -151,10 +151,10 @@ public class SelfSnapDetail extends Fragment implements NetworkCallBack, GoogleA
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         /*mGoogleApiClient = new GoogleApiClient
-                .Builder(mainActivity)
+                .Builder(mainActivitySignUP)
                 .addApi(Places.GEO_DATA_API)
                 .addApi(Places.PLACE_DETECTION_API)
-                .enableAutoManage(mainActivity, this)
+                .enableAutoManage(mainActivitySignUP, this)
                 .build();*/
         super.onCreate(savedInstanceState);
     }
@@ -337,7 +337,7 @@ public class SelfSnapDetail extends Fragment implements NetworkCallBack, GoogleA
         }else {
             ColorStateList oldColors =  tv_sw11_detail.getTextColors();
             tv_sw11_detail.setTextColor(oldColors);
-            //   holder.iv_like_frndrow.setColorFilter(ContextCompat.getColor(mainActivity, oldColors), android.graphics.PorterDuff.Mode.MULTIPLY);
+            //   holder.iv_like_frndrow.setColorFilter(ContextCompat.getColor(mainActivitySignUP, oldColors), android.graphics.PorterDuff.Mode.MULTIPLY);
         }
 
         if (scores==0.5){
@@ -694,7 +694,7 @@ public class SelfSnapDetail extends Fragment implements NetworkCallBack, GoogleA
             @Override
             public void onClick(View view) {
                 if (preferenceManager.getKey_location().equals("yes")){
-                    // MainActivity.changeFragment(new GoogleMap(mainActivity), "google");
+                    // MainActivity.changeFragment(new GoogleMap(mainActivitySignUP), "google");
                     PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
                     try {
                         startActivityForResult(builder.build(mainActivity), PLACE_PICKER_REQUEST);

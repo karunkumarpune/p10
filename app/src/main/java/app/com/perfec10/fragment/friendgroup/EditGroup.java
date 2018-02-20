@@ -128,7 +128,7 @@ public class EditGroup extends Fragment {
 
         et_subject_newsub = (EditText) view.findViewById(R.id.et_subject_newsub);
         et_subject_newsub.setText(grpname);
-       // Picasso.with(mainActivity).load(imgUrl).into(riv_add_img_newsub);
+       // Picasso.with(mainActivitySignUP).load(imgUrl).into(riv_add_img_newsub);
         imageLoader = CustomVolleyRequestQueue.getInstance(mainActivity).getImageLoader();
         imageLoader.get(NetworkConstants.imageBaseUrl+imgUrl, ImageLoader.getImageListener(riv_add_img_newsub,
                 R.mipmap.add_image, R.mipmap.add_image));
@@ -306,11 +306,11 @@ public class EditGroup extends Fragment {
                 if (error instanceof TimeoutError || error instanceof NoConnectionError) {
                     Log.d(TAG+" error ocurred", "TimeoutError");
                     Toast.makeText(mainActivity, "Please try later", Toast.LENGTH_SHORT).show();
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof AuthFailureError) {
                     Log.d(TAG+" error ocurred", "AuthFailureError");
                     Toast.makeText(mainActivity, "Your session has been expired.", Toast.LENGTH_SHORT).show();
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ServerError) {
                     Log.d(TAG+" error ocurred", "ServerError");
                     //    Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
@@ -319,7 +319,7 @@ public class EditGroup extends Fragment {
                     Toast.makeText(mainActivity, "Network Error", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ParseError) {
                     Log.d(TAG+" error ocurred", "ParseError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 }
 
                 progress.dismiss();

@@ -216,7 +216,7 @@ public class ShareContactList extends Fragment implements NetworkCallBack{
                         allFrnds.get(a).setStatus(true);
                     }
                 }
-                ShareContactsAdapter shareContactsAdapter = new ShareContactsAdapter(mainActivity, allFrnds);
+                ShareContactsAdapter shareContactsAdapter = new ShareContactsAdapter(mainActivitySignUP, allFrnds);
                 rv_frqfrnd_share_list.setAdapter(shareContactsAdapter);
                 shareContactsAdapter.notifyDataSetChanged();*/
 
@@ -263,7 +263,7 @@ public class ShareContactList extends Fragment implements NetworkCallBack{
                     // if contact list is not null
                     Log.d("not ", "zero");
                 }else {
-                    Toast.makeText(mainActivity, "No contacts to Share ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mainActivitySignUP, "No contacts to Share ", Toast.LENGTH_SHORT).show();
                 }*/
             }
         });
@@ -647,8 +647,8 @@ public class ShareContactList extends Fragment implements NetworkCallBack{
                         for (int i =0; i < MainActivity.fragmentManager.getBackStackEntryCount(); i++){
                             mainActivity.getSupportFragmentManager().popBackStack();
                         }
-                        //  MainActivity.fragmentManager = mainActivity.getSupportFragmentManager();
-                       // MainActivity.fragmentManager.beginTransaction().replace(R.id.main_frame, new Home(mainActivity), " home").commit();
+                        //  MainActivity.fragmentManager = mainActivitySignUP.getSupportFragmentManager();
+                       // MainActivity.fragmentManager.beginTransaction().replace(R.id.main_frame, new Home(mainActivitySignUP), " home").commit();
                     }
 
                 } catch (Exception e) {

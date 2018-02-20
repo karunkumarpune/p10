@@ -263,7 +263,7 @@ public class VerificationScreen extends Fragment implements NetworkCallBack {
                     //    Toast.makeText(getActivity(), "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ServerError) {
                     Log.d(TAG+" error ocurred", "ServerError");
-                  //  Toast.makeText(mainActivity, "Please enter valid OTP", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(mainActivitySignUP, "Please enter valid OTP", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof NetworkError) {
                     Log.d(TAG+" error ocurred", "NetworkError");
                 } else if (error instanceof ParseError) {
@@ -333,7 +333,7 @@ public class VerificationScreen extends Fragment implements NetworkCallBack {
                     //    Toast.makeText(getActivity(), "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ServerError) {
                     Log.d(TAG+" error ocurred", "ServerError");
-                   // Toast.makeText(mainActivity, "Email Id already registered", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(mainActivitySignUP, "Email Id already registered", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof NetworkError) {
                     Log.d(TAG+" error ocurred", "NetworkError");
                 } else if (error instanceof ParseError) {

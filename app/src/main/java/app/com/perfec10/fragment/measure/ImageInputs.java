@@ -256,7 +256,7 @@ public class ImageInputs extends Fragment implements NetworkCallBack, Animation.
                     Toast.makeText(mainActivity, "Please select picture Type", Toast.LENGTH_SHORT).show();
                 }
 
-                //MainActivity.changeFragment(new Stats(mainActivity), "stats");
+                //MainActivity.changeFragment(new Stats(mainActivitySignUP), "stats");
             }
         });
         iv_zoomin_input.setOnClickListener(new View.OnClickListener() {
@@ -368,14 +368,14 @@ public class ImageInputs extends Fragment implements NetworkCallBack, Animation.
             bundlereq.putString("image", String.valueOf(userImage));
             progress.show();
             Log.d(TAG+" params user input ", bundlereq+" ");
-           /* Network.measureImage(mainActivity, bundlereq, 20 * 1000,
+           /* Network.measureImage(mainActivitySignUP, bundlereq, 20 * 1000,
                     NetworkConstants.userInputUrl, this, 2);*/
 
-          //  mainActivity.getFragmentManager().popBackStack();
-           // MainActivity.changeFragment(new Stats(mainActivity), "stats");
+          //  mainActivitySignUP.getFragmentManager().popBackStack();
+           // MainActivity.changeFragment(new Stats(mainActivitySignUP), "stats");
 
             mainActivity.fragmentManager = mainActivity.getSupportFragmentManager();
-          //  mainActivity.fragmentManager.beginTransaction().replace(R.id.main_frame, new Stats(mainActivity)).commit();
+          //  mainActivitySignUP.fragmentManager.beginTransaction().replace(R.id.main_frame, new Stats(mainActivitySignUP)).commit();
         }else {
             Toast.makeText(mainActivity, "No Internt Connection ", Toast.LENGTH_SHORT).show();
         }
@@ -434,11 +434,11 @@ public class ImageInputs extends Fragment implements NetworkCallBack, Animation.
                 if (error instanceof TimeoutError || error instanceof NoConnectionError) {
                     Log.d(TAG+" error ocurred", "TimeoutError");
                     Toast.makeText(mainActivity, "Please try later", Toast.LENGTH_SHORT).show();
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof AuthFailureError) {
                     Log.d(TAG+" error ocurred", "AuthFailureError");
                     Toast.makeText(mainActivity, "Your session has been expired.", Toast.LENGTH_SHORT).show();
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ServerError) {
                     Log.d(TAG+" error ocurred", "ServerError");
                     //    Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
@@ -447,7 +447,7 @@ public class ImageInputs extends Fragment implements NetworkCallBack, Animation.
                     Toast.makeText(mainActivity, "Network Error", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ParseError) {
                     Log.d(TAG+" error ocurred", "ParseError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 }
 
                 progress.dismiss();
@@ -527,7 +527,7 @@ public class ImageInputs extends Fragment implements NetworkCallBack, Animation.
                 iv_show_input.setImageURI(uri);
                 //File fileLocation = new File(String.valueOf(uri)); //file path, which can be String, or Uri
 
-                //Picasso.with(mainActivity).load(fileLocation).into(iv_show_input);
+                //Picasso.with(mainActivitySignUP).load(fileLocation).into(iv_show_input);
                 if (resultCode == 0) {
                     Uri resultUri = result.getUri();
                 } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {

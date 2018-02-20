@@ -284,7 +284,7 @@ public class CreateGroup extends Fragment implements NetworkCallBack {
     @Override
     public void onStop() {
         super.onStop();
-      //  Toast.makeText(mainActivity, "on Stop Called", Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(mainActivitySignUP, "on Stop Called", Toast.LENGTH_SHORT).show();
         // i have to clear static data here when user going outside the app
 
       //  CreateGroupFriendsAdapter.contactList.clear();

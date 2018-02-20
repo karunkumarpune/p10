@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,13 +9,14 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_friend_post"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent"/>
     <TextView
+        android:layout_centerInParent="true"
         android:id="@+id/tv_sw1_frnd_post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:text="No Posts to Display"
+        android:text="No Posts to display"
         android:textAlignment="center"
         android:layout_margin="@dimen/dp_10"
         android:textSize="@dimen/sp_18"
@@ -24,4 +26,4 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:visibility="gone" />
-</LinearLayout>
+</RelativeLayout>

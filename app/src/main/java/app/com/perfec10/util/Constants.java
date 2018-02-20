@@ -40,4 +40,7 @@ public class Constants {
     public static String SESSION = "SESSION";
     public static String MOVE_SIMILAR = "MOVE_SIMILAR";
     public static String VISIBLE = "VISIBLE";
+
+    public static int is_externally_Share = 0;
+    public static int is_externally_Shares = 0;
 }

@@ -450,8 +450,8 @@ public class CameraNew extends Fragment implements SurfaceHolder.Callback {
                 FileOutputStream stream = mainActivity.openFileOutput(filename, Context.MODE_PRIVATE);
                 bit.compress(Bitmap.CompressFormat.PNG, 100, stream);
                Uri file = Uri.fromFile(getOutputMediaFile());
-                /*Uri uri = getImageUri(mainActivity, bit);
-                ExifInterface ei = new ExifInterface(getRealPathFromURI(mainActivity, uri));
+                /*Uri uri = getImageUri(mainActivitySignUP, bit);
+                ExifInterface ei = new ExifInterface(getRealPathFromURI(mainActivitySignUP, uri));
 
                 int orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION,
                         ExifInterface.ORIENTATION_UNDEFINED);
@@ -541,8 +541,8 @@ public class CameraNew extends Fragment implements SurfaceHolder.Callback {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(mainActivity.getContentResolver(), uri);
                     MainActivity.changeFragment(new CropZoomScreen(mainActivity, bitmap), "zoom");
                   //  MainActivity.changeFragment(new ImageInputs(mainActivity, bitmap), "Image input");
-                   // mainActivity.fragmentManager = mainActivity.getSupportFragmentManager();
-                   // mainActivity.fragmentManager.beginTransaction().replace(R.id.main_frame, new ImageInputs(mainActivity, bitmap)).commit();
+                   // mainActivitySignUP.fragmentManager = mainActivitySignUP.getSupportFragmentManager();
+                   // mainActivitySignUP.fragmentManager.beginTransaction().replace(R.id.main_frame, new ImageInputs(mainActivitySignUP, bitmap)).commit();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -237,7 +237,7 @@ public class ContactList extends Fragment implements NetworkCallBack {
             Toast.makeText(mainActivity, "Select participants to add", Toast.LENGTH_SHORT).show();
         }
 
-        //  Network.hitPostApiWithAuth(mainActivity,JsonObject.js,this, NetworkConstants.addgroupMember, 2);
+        //  Network.hitPostApiWithAuth(mainActivitySignUP,JsonObject.js,this, NetworkConstants.addgroupMember, 2);
     }
 
     public void addMember(final String jsonObject) {

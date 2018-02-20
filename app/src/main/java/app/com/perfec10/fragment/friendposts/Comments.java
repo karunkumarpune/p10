@@ -209,7 +209,7 @@ public class Comments extends Fragment implements NetworkCallBack {
                                 commentGS.setName(json.get("name")+"");
                                 commentsList.add(commentGS);
                             }
-                                /* commentsAdapter = new CommentsAdapter(mainActivity, commentsList);
+                                /* commentsAdapter = new CommentsAdapter(mainActivitySignUP, commentsList);
                                 rv_list_comment.setAdapter(commentsAdapter);*/
 
                                 if (flag) {

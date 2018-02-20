@@ -1,4 +1,4 @@
-package app.com.perfec10.fragment.login
+package app.com.perfec10.fragment.login.signUp
 
 import android.app.ProgressDialog
 import android.os.Bundle
@@ -16,22 +16,20 @@ import kotlinx.android.synthetic.main.activity_term_coditions.*
 import org.json.JSONObject
 
 
-class TermCoditionsActivity : AppCompatActivity() {
+class TermCoditionsActivitySignUP : AppCompatActivity() {
    private lateinit var preferenceManager: PreferenceManager
    val url="http://18.217.249.143/perfec10/termCondition/term.pdf"
-   lateinit var mainActivity:TermCoditionsActivity
+   lateinit var mainActivitySignUP: TermCoditionsActivitySignUP
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
       setContentView(R.layout.activity_term_coditions)
-      mainActivity=this
+      mainActivitySignUP =this
       preferenceManager = PreferenceManager(this)
       pdfView.isZooming
       pdfView.fromAsset("term.pdf")
        .load()
       preferenceManager.key_Sesstion = "1"
-     
-   
-   
+      
       Log.d("TAHS"," check_accept.isChecked "+check_accept.isClickable)
    
       check_accept.setOnClickListener {v->
@@ -68,8 +66,8 @@ class TermCoditionsActivity : AppCompatActivity() {
              val s= response.getString("message")
              if(s == "Successful.") {
                 preferenceManager.key_Sesstion = "2"
-                val addFriendAllowDialoge = AddFriendAllowDialoges(mainActivity, "email")
-                addFriendAllowDialoge.show(mainActivity.supportFragmentManager, "fsdf")
+                val addFriendAllowDialoge = AddFriendAllowDialogesSignUp(mainActivitySignUP, "email")
+                addFriendAllowDialoge.show(mainActivitySignUP.supportFragmentManager, "fsdf")
              }
           }
    

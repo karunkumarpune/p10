@@ -1,7 +1,6 @@
 package app.com.perfec10.fragment.home;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -16,26 +15,20 @@ import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Surface;
 import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import com.yalantis.ucrop.UCrop;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -50,7 +43,6 @@ import java.util.TimerTask;
 
 import app.com.perfec10.R;
 import app.com.perfec10.activity.MainActivity;
-import app.com.perfec10.fragment.measure.ImageInputs;
 import app.com.perfec10.fragment.measure.Stats;
 import app.com.perfec10.fragment.profile.Profile;
 import app.com.perfec10.util.Progress;
@@ -528,8 +520,8 @@ public class HomeCamera extends Fragment implements SurfaceHolder.Callback {
                 FileOutputStream stream = mainActivity.openFileOutput(filename, Context.MODE_PRIVATE);
                 bit.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 Uri file = Uri.fromFile(getOutputMediaFile());
-                /*Uri uri = getImageUri(mainActivity, bit);
-                ExifInterface ei = new ExifInterface(getRealPathFromURI(mainActivity, uri));
+                /*Uri uri = getImageUri(mainActivitySignUP, bit);
+                ExifInterface ei = new ExifInterface(getRealPathFromURI(mainActivitySignUP, uri));
 
                 int orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION,
                         ExifInterface.ORIENTATION_UNDEFINED);
@@ -643,8 +635,8 @@ public class HomeCamera extends Fragment implements SurfaceHolder.Callback {
                     }*/
                     MainActivity.changeFragment(new CropZoomScreen(mainActivity, bitmap), "zoom");
                     //  MainActivity.changeFragment(new ImageInputs(mainActivity, bitmap), "Image input");
-                    // mainActivity.fragmentManager = mainActivity.getSupportFragmentManager();
-                    // mainActivity.fragmentManager.beginTransaction().replace(R.id.main_frame, new ImageInputs(mainActivity, bitmap)).commit();
+                    // mainActivitySignUP.fragmentManager = mainActivitySignUP.getSupportFragmentManager();
+                    // mainActivitySignUP.fragmentManager.beginTransaction().replace(R.id.main_frame, new ImageInputs(mainActivitySignUP, bitmap)).commit();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

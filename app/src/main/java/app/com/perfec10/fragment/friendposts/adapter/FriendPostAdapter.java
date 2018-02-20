@@ -306,7 +306,7 @@ public class FriendPostAdapter extends RecyclerView.Adapter<FriendPostAdapter.Ho
             }else {
                 ColorStateList oldColors =  holder.tv_sw12_frndrow.getTextColors();
                 holder.tv_sw11_frndrow.setTextColor(oldColors);
-                //   holder.iv_like_frndrow.setColorFilter(ContextCompat.getColor(mainActivity, oldColors), android.graphics.PorterDuff.Mode.MULTIPLY);
+                //   holder.iv_like_frndrow.setColorFilter(ContextCompat.getColor(mainActivitySignUP, oldColors), android.graphics.PorterDuff.Mode.MULTIPLY);
             }
         }
 

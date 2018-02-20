@@ -194,7 +194,7 @@ public class SelfSnapAdapter extends RecyclerView.Adapter<SelfSnapAdapter.Holder
           }else {
             ColorStateList oldColors =  holder.tv_commcount_selfrow.getTextColors();
             holder.tv_sw11_selfrow.setTextColor(oldColors);
-        //   holder.iv_like_frndrow.setColorFilter(ContextCompat.getColor(mainActivity, oldColors), android.graphics.PorterDuff.Mode.MULTIPLY);
+        //   holder.iv_like_frndrow.setColorFilter(ContextCompat.getColor(mainActivitySignUP, oldColors), android.graphics.PorterDuff.Mode.MULTIPLY);
           }
         holder.tv_commcount_selfrow.setText(postList.get(position).getTotalComment() + " Comments");
         if (postList.get(position).getTotalLike() == 1) {
@@ -477,7 +477,7 @@ public class SelfSnapAdapter extends RecyclerView.Adapter<SelfSnapAdapter.Holder
                 String rating = postList.get(position).getScore();
                 rating = rating.replace("\"", "");
                 scores = rating;
-                /*FragmentTransaction ft = mainActivity.getFragmentManager().beginTransaction();
+                /*FragmentTransaction ft = mainActivitySignUP.getFragmentManager().beginTransaction();
                 ft.setCustomAnimations(R.anim.popin, R.anim.popin);*/
                 MainActivity.changeFragment(new SelfSnapDetail(mainActivity, holder.tv_datetime_selfrow.getText().toString(),
                         postList.get(position).getCaption(), postList.get(position).getLocation(),

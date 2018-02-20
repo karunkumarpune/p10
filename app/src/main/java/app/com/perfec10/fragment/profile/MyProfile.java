@@ -186,7 +186,7 @@ public class MyProfile extends Fragment implements NetworkCallBack{
             @Override
             public void onClick(View view) {
 
-                // Profile.changeProfileFragment(new FriendsList(mainActivity), "stats");
+                // Profile.changeProfileFragment(new FriendsList(mainActivitySignUP), "stats");
             }
         });
         ll_myprofile_profile.setOnClickListener(new View.OnClickListener() {

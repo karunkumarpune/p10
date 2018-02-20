@@ -113,10 +113,10 @@ public class StatsInput extends Fragment implements GoogleApiClient.OnConnection
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
        /* mGoogleApiClient = new GoogleApiClient
-                .Builder(mainActivity)
+                .Builder(mainActivitySignUP)
                 .addApi(Places.GEO_DATA_API)
                 .addApi(Places.PLACE_DETECTION_API)
-                .enableAutoManage(mainActivity, this)
+                .enableAutoManage(mainActivitySignUP, this)
                 .build();*/
         super.onCreate(savedInstanceState);
     }
@@ -252,7 +252,7 @@ public class StatsInput extends Fragment implements GoogleApiClient.OnConnection
         }
 
 
-        // Toast.makeText(mainActivity, address+" ", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(mainActivitySignUP, address+" ", Toast.LENGTH_SHORT).show();
         if (Stats.age != null && Stats.age.length()> 0){
             tv_selectage_stats.setText(Stats.age);
         }else {
@@ -464,7 +464,7 @@ public class StatsInput extends Fragment implements GoogleApiClient.OnConnection
             @Override
             public void onClick(View view) {
                 if (preferenceManager.getKey_location().equals("yes")){
-                    // MainActivity.changeFragment(new GoogleMap(mainActivity), "google");
+                    // MainActivity.changeFragment(new GoogleMap(mainActivitySignUP), "google");
                     PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
                     try {
                         startActivityForResult(builder.build(mainActivity), PLACE_PICKER_REQUEST);

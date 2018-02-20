@@ -61,12 +61,16 @@ import java.util.Map;
 
 import app.com.perfec10.R;
 import app.com.perfec10.activity.MainActivity;
+import app.com.perfec10.fragment.home.Home;
 import app.com.perfec10.fragment.self_snaps.SelfSnapDetail;
 import app.com.perfec10.network.Network;
 import app.com.perfec10.network.NetworkConstants;
 import app.com.perfec10.util.GPSTracker;
 import app.com.perfec10.util.Model;
 import app.com.perfec10.util.PreferenceManager;
+
+import static app.com.perfec10.util.Constants.is_externally_Share;
+import static app.com.perfec10.util.Constants.is_externally_Shares;
 
 /**
  * Created by admin on 11/10/2017.
@@ -158,10 +162,10 @@ public class Share extends Fragment implements GoogleApiClient.OnConnectionFaile
         super.onCreate(savedInstanceState);
         /*try {
             mGoogleApiClient = new GoogleApiClient
-                    .Builder(mainActivity)
+                    .Builder(mainActivitySignUP)
                     .addApi(Places.GEO_DATA_API)
                     .addApi(Places.PLACE_DETECTION_API)
-                    .enableAutoManage(mainActivity, this)
+                    .enableAutoManage(mainActivitySignUP, this)
                     .build();
             super.onCreate(savedInstanceState);
         } catch (Exception e) {
@@ -171,10 +175,10 @@ public class Share extends Fragment implements GoogleApiClient.OnConnectionFaile
        /* if(mGoogleApiClient == null || !mGoogleApiClient.isConnected()){
             try {
                 mGoogleApiClient = new GoogleApiClient
-                        .Builder(mainActivity)
+                        .Builder(mainActivitySignUP)
                         .addApi(Places.GEO_DATA_API)
                         .addApi(Places.PLACE_DETECTION_API)
-                        .enableAutoManage(mainActivity, this)
+                        .enableAutoManage(mainActivitySignUP, this)
                         .build();
 
             } catch (Exception e) {
@@ -189,19 +193,62 @@ public class Share extends Fragment implements GoogleApiClient.OnConnectionFaile
         View v = inflater.inflate(R.layout.share_layout, container, false);
         initView(v);
         clickListner();
+
+        Log.d("TAGS","Sahre onCreateView");
+
         return v;
+
+
     }
 
     @Override
     public void onStart() {
         super.onStart();
+
+
+        if(is_externally_Share==1){
+            View view1 = mainActivity.getCurrentFocus();
+            if (view1 != null) {
+                InputMethodManager imm = (InputMethodManager)mainActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
+                assert imm != null;
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+            mainActivity.getSupportFragmentManager().popBackStack();
+        }
+
+
+        if(is_externally_Shares==2){
+            View view1 = mainActivity.getCurrentFocus();
+            if (view1 != null) {
+                InputMethodManager imm = (InputMethodManager)mainActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
+                assert imm != null;
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+            mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Home(mainActivity), "home").commit();
+        }
+
+
         mGoogleApiClient.connect();
+        Log.d("TAGS","Sahre onStart");
+
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        Log.d("TAGS","Sahre onResume");
+    }
+
+
 
     @Override
     public void onStop() {
         mGoogleApiClient.disconnect();
         super.onStop();
+
+        Log.d("TAGS","Sahre onStop");
+
     }
 
     @Override
@@ -209,6 +256,7 @@ public class Share extends Fragment implements GoogleApiClient.OnConnectionFaile
         super.onPause();
         mGoogleApiClient.stopAutoManage(mainActivity);
         mGoogleApiClient.disconnect();
+        Log.d("TAGS","Sahre onPause");
 
     }
 
@@ -216,6 +264,8 @@ public class Share extends Fragment implements GoogleApiClient.OnConnectionFaile
     public void onDetach() {
         super.onDetach();
         mGoogleApiClient = null;
+        Log.d("TAGS","Sahre onDetach");
+
     }
 
     public void initView(View view){
@@ -567,7 +617,10 @@ public class Share extends Fragment implements GoogleApiClient.OnConnectionFaile
         ll_all_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+/*  Sahre Externally Data...........................................*/
                 try {
+                    is_externally_Shares=2;
+                    is_externally_Share=1;
                     screenShot(view);
                     Intent i = new Intent(Intent.ACTION_SEND);
                     i.setType("text/plain");
@@ -578,7 +631,6 @@ public class Share extends Fragment implements GoogleApiClient.OnConnectionFaile
                     i.putExtra(Intent.EXTRA_TEXT, sAux);
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
                     mbitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                    byte[] byteArray = stream.toByteArray();
                     i.putExtra(Intent.EXTRA_STREAM, getImageUri(mainActivity, mbitmap));
                     startActivity(Intent.createChooser(i, "choose one"));
                 } catch(Exception e) {
@@ -586,7 +638,11 @@ public class Share extends Fragment implements GoogleApiClient.OnConnectionFaile
                 }
             }
         });
+
     }
+
+
+
 
     public Uri getImageUri(Context inContext, Bitmap inImage) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
@@ -651,10 +707,10 @@ public class Share extends Fragment implements GoogleApiClient.OnConnectionFaile
                 VolleyLog.d(TAG, "Error: " + error.getMessage());
                 if (error instanceof TimeoutError || error instanceof NoConnectionError) {
                     Log.d(TAG+" error ocurred", "TimeoutError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof AuthFailureError) {
                     Log.d(TAG+" error ocurred", "AuthFailureError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ServerError) {
                     Log.d(TAG+" error ocurred", "ServerError");
 
@@ -663,7 +719,7 @@ public class Share extends Fragment implements GoogleApiClient.OnConnectionFaile
                     Toast.makeText(mainActivity, "Network Error", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ParseError) {
                     Log.d(TAG+" error ocurred", "ParseError");
-                    //    Toast.makeText(mainActivity, "Internet connection is ", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is ", Toast.LENGTH_LONG).show();
                 }
             }
         }) {

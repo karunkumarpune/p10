@@ -118,7 +118,7 @@ public class FriendsList extends Fragment implements NetworkCallBack{
         rv_grouplist_frndlist = (RecyclerView) view.findViewById(R.id.rv_grouplist_frndlist);
         linearLayoutManager = new LinearLayoutManager(mainActivity);
         rv_grouplist_frndlist.setLayoutManager(linearLayoutManager);
-        /*GroupFriendAdapter groupFriendAdapter = new GroupFriendAdapter(mainActivity);
+        /*GroupFriendAdapter groupFriendAdapter = new GroupFriendAdapter(mainActivitySignUP);
         rv_grouplist_frndlist.setAdapter(groupFriendAdapter);*/
         rv_frndlist_frndlist = (RecyclerView) view.findViewById(R.id.rv_frndlist_frndlist);
         linearLayoutManager1 = new LinearLayoutManager(mainActivity);

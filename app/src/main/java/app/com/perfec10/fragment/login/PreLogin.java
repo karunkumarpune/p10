@@ -79,7 +79,7 @@ public class PreLogin extends Fragment {
             @Override
             public void onClick(View view) {
                 MainActivity.clearBackStack();
-                mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Home(mainActivity), "home").commit();
+                mainActivitySignUP.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Home(mainActivitySignUP), "home").commit();
 
             }
         });*/

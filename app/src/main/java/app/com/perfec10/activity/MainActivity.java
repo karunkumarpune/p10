@@ -152,15 +152,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         /*if (app.com.perfec10.fragment.profile.Settings.sw_fb_sett != null){
             if (app.com.perfec10.fragment.profile.Profile.logout.equals("0")){
-                Toast.makeText(mainActivity, app.com.perfec10.fragment.profile.Profile.logout, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mainActivitySignUP, app.com.perfec10.fragment.profile.Profile.logout, Toast.LENGTH_SHORT).show();
                 facebookLink();
             }else {
-                Toast.makeText(mainActivity, app.com.perfec10.fragment.profile.Profile.logout, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mainActivitySignUP, app.com.perfec10.fragment.profile.Profile.logout, Toast.LENGTH_SHORT).show();
              //   facebookLogin();
             }
 
         }else {
-            Toast.makeText(mainActivity, "jdfghdf", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mainActivitySignUP, "jdfghdf", Toast.LENGTH_SHORT).show();
             facebookLogin();
         }*/
 
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         }else {
             fragmentManager = mainActivity.getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.main_frame, new PreLogin(mainActivity)).commit();
-           // fragmentManager.beginTransaction().replace(R.id.main_frame, new Home(mainActivity)).commit();
+           // fragmentManager.beginTransaction().replace(R.id.main_frame, new Home(mainActivitySignUP)).commit();
         }
 
 
@@ -370,7 +370,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                                         if (preferenceManager.getKey_userName().length() > 0){
                                             linkfb(id,tokens);
                                             preferenceManager.setKey_fb_accesstoken(id);
-                                          //  Toast.makeText(mainActivity, "in linking ", Toast.LENGTH_SHORT).show();
+                                          //  Toast.makeText(mainActivitySignUP, "in linking ", Toast.LENGTH_SHORT).show();
                                         }else {
                                             if (email != null && email.length() > 0){
                                                 if (Network.isConnected(mainActivity)){
@@ -397,14 +397,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
                                                     progress.show();
                                                     signup_result(jsonObject.toString());
-                                                    //  Network.hitPostApi(mainActivity, jsonObject, this, NetworkConstants.signupUrl, NetworkConstants.requestCodeSignup);
+                                                    //  Network.hitPostApi(mainActivitySignUP, jsonObject, this, NetworkConstants.signupUrl, NetworkConstants.requestCodeSignup);
                                                 }else {
                                                     Toast.makeText(mainActivity, "No Internt Connection ", Toast.LENGTH_SHORT).show();
                                                 }
                                             }else {
                                                 Toast.makeText(mainActivity, "This account is not linked with any email", Toast.LENGTH_SHORT).show();
                                             }
-                                           // Toast.makeText(mainActivity, " again in signup ", Toast.LENGTH_SHORT).show();
+                                           // Toast.makeText(mainActivitySignUP, " again in signup ", Toast.LENGTH_SHORT).show();
                                         }
 
                                     }else {
@@ -427,14 +427,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
                                                 progress.show();
                                                 signup_result(jsonObject.toString());
-                                                //  Network.hitPostApi(mainActivity, jsonObject, this, NetworkConstants.signupUrl, NetworkConstants.requestCodeSignup);
+                                                //  Network.hitPostApi(mainActivitySignUP, jsonObject, this, NetworkConstants.signupUrl, NetworkConstants.requestCodeSignup);
                                             }else {
                                                 Toast.makeText(mainActivity, "No Internt Connection ", Toast.LENGTH_SHORT).show();
                                             }
                                         }else {
                                             Toast.makeText(mainActivity, "This account is not linked with any email", Toast.LENGTH_SHORT).show();
                                         }
-                                    //    Toast.makeText(mainActivity, "in signup ", Toast.LENGTH_SHORT).show();
+                                    //    Toast.makeText(mainActivitySignUP, "in signup ", Toast.LENGTH_SHORT).show();
                                     }
 
                                     // Toast.makeText(MainActivity.this, "Welcome :" +fName+" "+lName+", Email :"+email+" Birthday :"+birthday+","+" image-url :"+pictureUrl, Toast.LENGTH_SHORT).show();
@@ -612,12 +612,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
                                         if (isLogin.equals("1")){// user has loggedin before
 
-                                          //  mainActivity.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Home(mainActivity), "home").commit();
+                                          //  mainActivitySignUP.getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Home(mainActivitySignUP), "home").commit();
                                         }else {
                                             // AddAfterSignup is called only when loggedin from fb
 
-                                       //     AddFriendAllowDialoge addFriendAllowDialoge = new AddFriendAllowDialoge(mainActivity , "fb");
-                                        //    addFriendAllowDialoge.show(mainActivity.getSupportFragmentManager(), "fsdf");
+                                       //     AddFriendAllowDialoge addFriendAllowDialoge = new AddFriendAllowDialoge(mainActivitySignUP , "fb");
+                                        //    addFriendAllowDialoge.show(mainActivitySignUP.getSupportFragmentManager(), "fsdf");
 
                                         }
                                     }
@@ -634,10 +634,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 VolleyLog.d(TAG+"error ", "Error: " + error.getMessage());
                 if (error instanceof TimeoutError || error instanceof NoConnectionError) {
                     Log.d(TAG+"error ocurred", "TimeoutError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof AuthFailureError) {
                     Log.d(TAG+"error ocurred", "AuthFailureError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ServerError) {
                     Log.d(TAG+"error ocurred", "ServerError");
                         Toast.makeText(getApplicationContext(), "ServerError", Toast.LENGTH_LONG).show();
@@ -646,7 +646,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     Toast.makeText(mainActivity, "Network Error", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ParseError) {
                     Log.d(TAG+"error ocurred", "ParseError");
-                    //    Toast.makeText(mainActivity, "Internet connection is ", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is ", Toast.LENGTH_LONG).show();
                 }
             }
 

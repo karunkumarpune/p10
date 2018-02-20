@@ -67,7 +67,7 @@ public class HorizontalSelectAdaptor extends RecyclerView.Adapter<HorizontalSele
                     CreateGrpSubject.tv_particitants_crtgrpsub.setText("Participants: "+( CreateGroupFriendsAdapter.selectedContactList.size()-1)+" / "+tokens[1 ]);
                 }
                 String name = CreateGroupFriendsAdapter.selectedContactList.get(position).getName();
-               // Toast.makeText(mainActivity, name + " removed", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(mainActivitySignUP, name + " removed", Toast.LENGTH_SHORT).show();
                 CreateGroupFriendsAdapter.selectedContactList.remove(position);
 
                 // the below line of code is written to unselect from vertical Adapter

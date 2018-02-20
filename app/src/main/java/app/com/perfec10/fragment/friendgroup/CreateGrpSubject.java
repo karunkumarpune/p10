@@ -181,7 +181,7 @@ public class CreateGrpSubject extends Fragment {
                         progress.show();
                         createGrp();
                     /*}else {
-                        Toast.makeText(mainActivity, "Please select the Group Image ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mainActivitySignUP, "Please select the Group Image ", Toast.LENGTH_SHORT).show();
                     }*/
                 }else {
                     Toast.makeText(mainActivity, "Please enter Group Subject ", Toast.LENGTH_SHORT).show();
@@ -334,11 +334,11 @@ public class CreateGrpSubject extends Fragment {
                 if (error instanceof TimeoutError || error instanceof NoConnectionError) {
                     Log.d(TAG+ " error ocurred", "TimeoutError");
                     Toast.makeText(mainActivity, "Please try later", Toast.LENGTH_SHORT).show();
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof AuthFailureError) {
                     Log.d(TAG+" error ocurred", "AuthFailureError");
                     Toast.makeText(mainActivity, "Your session has been expired.", Toast.LENGTH_SHORT).show();
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ServerError) {
                     Log.d(TAG+" error ocurred", "ServerError");
                     //    Toast.makeText(getApplicationContext(), "Server Error", Toast.LENGTH_LONG).show();
@@ -347,7 +347,7 @@ public class CreateGrpSubject extends Fragment {
                     Toast.makeText(mainActivity, "Network Error", Toast.LENGTH_LONG).show();
                 } else if (error instanceof ParseError) {
                     Log.d(TAG+" error ocurred", "ParseError");
-                    //    Toast.makeText(mainActivity, "Internet connection is slow", Toast.LENGTH_LONG).show();
+                    //    Toast.makeText(mainActivitySignUP, "Internet connection is slow", Toast.LENGTH_LONG).show();
                 }
 
                 progress.dismiss();

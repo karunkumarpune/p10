@@ -111,7 +111,7 @@ public class AddFriend extends Fragment implements NetworkCallBack {
         preferenceManager = new PreferenceManager(mainActivity);
 
 
-        //  Log.d(TAG, "fb frnd name "+ mainActivity.fbFriends.get(0).getId()+" ");
+        //  Log.d(TAG, "fb frnd name "+ mainActivitySignUP.fbFriends.get(0).getId()+" ");
     }
 
     public AddFriend() {
@@ -202,7 +202,7 @@ public class AddFriend extends Fragment implements NetworkCallBack {
                 } else {
                     if (fbClick) {
                         if (fbFrndsList != null) {
-                          //  AddFrndAdapter addFrndAdapter = new AddFrndAdapter(mainActivity, fbFrndsList);
+                          //  AddFrndAdapter addFrndAdapter = new AddFrndAdapter(mainActivitySignUP, fbFrndsList);
                            // rv_serachlist_addfrnd.setAdapter(addFrndAdapter);
                         } else {
                             rv_serachlist_addfrnd.setVisibility(View.GONE);
@@ -394,7 +394,7 @@ public class AddFriend extends Fragment implements NetworkCallBack {
 
                                 }
 
-                                // addFrndAdapter = new AddFrndAdapter(mainActivity, fbFrndsList);
+                                // addFrndAdapter = new AddFrndAdapter(mainActivitySignUP, fbFrndsList);
                                 //  rv_serachlist_addfrnd.setAdapter(addFrndAdapter);
                                 //  addFrndAdapter.notifyDataSetChanged();
 
@@ -417,7 +417,7 @@ public class AddFriend extends Fragment implements NetworkCallBack {
                                    /* if (fbFrndsList != null) {
                                         if (fbFrndsList.size() > 0) {
                                             rv_serachlist_addfrnd.setVisibility(View.VISIBLE);
-                                            addFrndAdapter = new AddFrndAdapter(mainActivity, fbFrndsList);
+                                            addFrndAdapter = new AddFrndAdapter(mainActivitySignUP, fbFrndsList);
                                             rv_serachlist_addfrnd.setAdapter(addFrndAdapter);
                                             addFrndAdapter.notifyDataSetChanged();
                                         } else {

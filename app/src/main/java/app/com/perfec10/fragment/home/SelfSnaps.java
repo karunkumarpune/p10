@@ -207,6 +207,7 @@ public class SelfSnaps extends Fragment implements NetworkCallBack {
                     message = returnEmptyString(jsonObject.get("message"));
 
                     if (message.equals("Successful")) {
+                        ll_header.setVisibility(View.VISIBLE);
                         JsonArray result = jsonObject.getAsJsonArray("result");
                         if (result.size() > 0) {
                             count=count+result.size();
@@ -269,7 +270,7 @@ public class SelfSnaps extends Fragment implements NetworkCallBack {
                                 }
                                 postList.add(selfPostGS);
                             }
-                          /* SelfSnapAdapter selfSnapAdapter = new SelfSnapAdapter(mainActivity, postList);
+                          /* SelfSnapAdapter selfSnapAdapter = new SelfSnapAdapter(mainActivitySignUP, postList);
                            rv_self_post.setAdapter(selfSnapAdapter);*/
                             if (flag) {
                                 Log.d(TAG+" first ", "time");
@@ -289,7 +290,8 @@ public class SelfSnaps extends Fragment implements NetworkCallBack {
                             }
                         }
                     } else {
-                        tv_sw3_selfpost.setVisibility(View.VISIBLE);
+                        tv_sw3_selfpost.setVisibility(View.GONE);
+                        ll_header.setVisibility(View.GONE);
                     }
 
                 } catch (Exception e) {

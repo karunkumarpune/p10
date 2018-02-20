@@ -1,4 +1,4 @@
-package app.com.perfec10.fragment.login;
+package app.com.perfec10.fragment.login.signUp;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -23,18 +23,18 @@ import app.com.perfec10.activity.MainActivity;
  */
 
 @SuppressLint("ValidFragment")
-public class AddFriendAllowDialoges extends DialogFragment {
-    private TermCoditionsActivity mainActivity;
+public class AddFriendAllowDialogesSignUp extends DialogFragment {
+    private TermCoditionsActivitySignUP mainActivity;
     private String TAG = "AddFriendAllowDialoge";
     private TextView tv_later_popup, tv_yes_popup, tv_subtext_dialoge;
     private String from;
 
-    public AddFriendAllowDialoges(TermCoditionsActivity mainActivity, String from){
+    public AddFriendAllowDialogesSignUp(TermCoditionsActivitySignUP mainActivity, String from){
         this.mainActivity = mainActivity;
         this.from = from;
     }
 
-    public AddFriendAllowDialoges(){
+    public AddFriendAllowDialogesSignUp(){
 
     }
 
